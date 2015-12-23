@@ -17,6 +17,25 @@ var document = this.document
   , open
   , lights;
 
+
+  var initialized = false;
+  document.onreadystatechange = function(state){
+    if(initialized){
+      return;
+    }
+    initialized = true;
+    setTimeout(function(){
+      document.getElementsByTagName("body")[0].style.display = "block";
+
+      new Window;
+      console.log('tty', tty);
+      var win = tty.windows[0];
+      win.maximize();
+      win.minimize();
+      win.maximize();
+
+  },1000);
+  };
 /**
  * Initial Document Title
  */
